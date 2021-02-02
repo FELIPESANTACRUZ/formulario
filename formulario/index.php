@@ -77,6 +77,26 @@ session_start();
   </div>
 </form>
 
+<!-- LISTAR MENSAGENS ENVIADAS INICIO-->
+<h1>Listar Mensagem</h1>
+    <?php
+    //SQL para selecionar os registros
+    $result_msg_cont = "SELECT * FROM mensagens_contatos ORDER BY id ASC";
+
+    //seleciona os registros
+    $resultado_msg_cont = $conn->prepare($result_msg_cont);
+    $resultado_msg_cont->execute();
+
+    while($row_msg_cont = $resultado_msg_cont->fetch(PDO::FETCH_ASSOC)){
+        echo "ID" . $row_msg_cont['id']."<hr />";
+        echo "Nome" . $row_msg_cont['nome']."<hr />";
+        echo "E-mail" . $row_msg_cont['email']."<hr />";
+        echo "Assunto" . $row_msg_cont['assunto']."<hr />";
+    }
+    ?>
+    <!-- LISTAR MENSAGENS ENVIADAS FIM-->
+
+
 </body>
 
 </html
