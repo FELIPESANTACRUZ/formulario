@@ -1,6 +1,5 @@
 <?php
 session_start();
-include_once './connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -81,6 +80,7 @@ include_once './connection.php';
 <!-- LISTAR MENSAGENS ENVIADAS INICIO-->
 <h1>Listar Mensagem</h1>
     <?php
+ include_once './connection.php';
     //SQL para selecionar os registros
     $result_msg_cont = "SELECT * FROM mensagens_contatos ORDER BY id ASC";
 
